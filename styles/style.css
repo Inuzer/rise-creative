@@ -1,3 +1,191 @@
+/* styles/style.css */
+
+:root {
+  --primary-color: #00bcd4;
+  --accent-color: #ff4081;
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --muted-color: #bbbbbb;
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* Header */
 .site-header {
-  background-color: palevioletred;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  background-color: #111;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 16px;
+}
+
+.logo img {
+  height: 36px;
+}
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #eee;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.main-nav a:hover {
+  color: #facc15;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  padding: 6px 14px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #facc15;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.auth-buttons button:hover {
+  background-color: #facc15;
+  color: #111;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Sections */
+section {
+  padding: 60px 40px;
+}
+section h1,
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+section p {
+  color: var(--muted-color);
+  margin-bottom: 15px;
+}
+
+/* Lists */
+.why-choose-us ul,
+.main-nav ul,
+.about-us ul,
+.services ul,
+.ready-to-use ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 24px;
+}
+ul li {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  flex: 1 1 250px;
+  transition: transform var(--transition);
+}
+ul li:hover {
+  transform: translateY(-5px);
+}
+
+/* Special section styles */
+.about-us,
+.services,
+.ready-to-use {
+  background-color: #181818;
+  border-radius: var(--border-radius);
+  margin: 40px auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 }
